@@ -58,6 +58,8 @@ var dataService = new TaskDataService();
         treegrid.dataSource = result;
     }
     function dataStateChange(state) {
+        console.log('DataStateChange event was triggered');
+        console.log(state);
         var query = treegrid.grid.getDataModule().generateQuery();
         if (state.action.requestType === 'expand') {
             state.action.childData = dataService.execute(state, query);
@@ -74,6 +76,8 @@ var dataService = new TaskDataService();
         }
     }
     function dataSourceChanged(state) {
+        console.log('DataSourceChanged event was triggered');
+        console.log(state);
         if (state.action === 'add') {
             dataService.addRecord(state.data, state.index);
             state.endEdit();
