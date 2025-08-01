@@ -40,6 +40,7 @@ var treegrid = new ej.treegrid.TreeGrid({
             headerText: 'Start Date',
             textAlign: 'Right',
             width: 120,
+            editType: 'datepickeredit',
             format: { skeleton: 'yMd', type: 'date' },
         },
         {
